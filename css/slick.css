@@ -1,0 +1,203 @@
+/* Slider */
+.slick-slider
+{
+    position: relative;
+
+    display: block;
+    box-sizing: border-box;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list
+{
+    position: relative;
+
+    display: block;
+    overflow: hidden;
+
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus
+{
+    outline: none;
+}
+.slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+.slick-track
+{
+    position: relative;
+    top: 0;
+    left: 0;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.slick-track:before,
+.slick-track:after
+{
+    display: table;
+
+    content: '';
+}
+.slick-track:after
+{
+    clear: both;
+}
+.slick-loading .slick-track
+{
+    visibility: hidden;
+}
+
+.slick-slide
+{
+    display: none;
+    float: left;
+
+    height: 100%;
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide
+{
+    float: right;
+}
+.slick-slide img
+{
+    display: block;
+}
+.slick-slide.slick-loading img
+{
+    display: none;
+}
+.slick-slide.dragging img
+{
+    pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+    display: block;
+
+    height: auto;
+
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+
+/* 동그라미 버튼 
+<ul class="slick-dots">
+    <li><button>1</button></li>
+    <li><button>2</button></li>
+    <li><button>3</button></li>
+</ul>
+*/
+.slick-dots {
+    position:absolute; 
+    bottom:20px;
+    width:100%; 
+    left:0px;
+    text-align:center;
+}
+.slick-dots > li { display:inline-block; 
+    margin:0px 5px }
+
+.slick-dots > li > button {
+    width:20px; height:20px; border-radius:50%;
+    background:pink; text-indent:-99999px;
+}
+.slick-dots > li.slick-active > button {
+    background:red
+}
+
+.mainSlide2 .slick-dots > li { width:10%; height:1px; background:pink; margin:0px 3px; position:relative; 
+}
+.mainSlide2 .slick-dots  li  button {
+    width:0%; height:2px; background:pink; 
+    text-indent:-99999px; position:absolute; left:0px; 
+}
+.mainSlide2 .slick-dots  li.slick-active  button {
+    background:blue; 
+    animation:progressbar 3s;
+}
+
+@-webkit-keyframes progressbar {
+    from { width:0%;    }
+    to { width:100%; }
+}
+
+@keyframes progressbar {
+    from { width:0%;    }
+    to { width:100%;  }
+}
+
+.PrevArrow { position:absolute; top:50%; left:2%; 
+    font-size:80px; color:#fff;
+    background:none; border:none;
+    margin-top:-40px;
+    z-index:9999
+}
+.NextArrow { position:absolute; top:50%; right:2%; 
+    font-size:80px; color:#fff;
+    background:none; border:none;
+    margin-top:-40px;
+    z-index:9999
+}
+
+.sbox { position:relative; }
+.sbox .slideTxt { position:absolute; width:100%;
+    text-align:center;
+    top:50%; left:0%; color:#fff; margin-top:-39.5px }
+
+.mainSlide1 .sbox.slick-active strong { font-size:20px; 
+    font-weight:900; display:block; }
+.mainSlide1 .sbox.slick-active p { font-size:15px; }
+
+.mainSlide2 .sbox.slick-active strong { font-size:35px; 
+    font-weight:900; display:block;
+    animation:fadeInDown 1s both 0.5s;
+}
+.mainSlide2 .sbox.slick-active p { font-size:25px; 
+    animation:fadeInUp 1s both 1s; 
+}
+
+.mainSlide1 .sbox img { padding:2% } /* 슬라이드 사이 여백 */
+.mainSlide1 .slide1 .slideTxt { color:red }
+.mainSlide1 .slide2 .slideTxt { color:blue }
+.mainSlide1 .slide3 .slideTxt { color:orange }
+
+
